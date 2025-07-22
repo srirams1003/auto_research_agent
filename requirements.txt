@@ -1,0 +1,6 @@
+requests
+arxiv
+openai
+langchain
+PyMuPDF
+tiktoken 
