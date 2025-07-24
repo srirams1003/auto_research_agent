@@ -1,6 +1,7 @@
 requests
 arxiv
-openai
+python-dotenv
+google-generativeai
 langchain
 PyMuPDF
 tiktoken 

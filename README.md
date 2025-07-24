@@ -10,14 +10,34 @@ A lightweight agentic AI tool to search, summarize, and synthesize research pape
 
 ## Quickstart
 
+0. Create a virtual environment:
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate   # macOS/Linux
+    .venv\Scripts\activate      # Windows
+    ```
+
 1. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-2. Set your OpenAI API key:
-   ```bash
-   export OPENAI_API_KEY=your_api_key_here
-   ```
+
+2. Configure your environment
+
+    Copy the .env.example file to .env and add your Gemini API Key:
+
+    ```python
+    cp .env.example .env
+    ```
+
+    Inside .env:
+
+    ```
+    GEMINI_API_KEY=your-gemini-api-key-here
+    ```
+
+    [ 🔑 ] Get your Gemini API key from: https://makersuite.google.com/app/apikey
+
 3. Run the main program:
    ```bash
    python main.py
