@@ -14,8 +14,10 @@ A lightweight agentic AI tool to search, summarize, and synthesize research pape
     ```bash
     python -m venv .venv
     source .venv/bin/activate   # macOS/Linux
-    .venv\Scripts\activate      # Windows
     ```
+    <!-- .venv\Scripts\activate      # Windows -->
+
+    ##### NOTE: You have to run the `source .venv/bin/activate` command every time you open a new terminal for this project.
 
 1. Install dependencies:
    ```bash
