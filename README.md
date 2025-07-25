@@ -1,5 +1,7 @@
 # Auto Research Agent
 
+Look at github-instructions.md to see how to make changes
+
 A lightweight agentic AI tool to search, summarize, and synthesize research papers from arXiv or Semantic Scholar.
 
 ## Features
