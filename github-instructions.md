@@ -1,5 +1,7 @@
+### Steps to follow
+
 0. `git checkout main` -> switch to main branch before pulling
-1. `git pull` -> pull most recent changes before making your own changes
+1. `git fetch origin && git pull` -> pull most recent changes before making your own changes
 2. `git checkout -b pranav_example_branch` -> replace with your name 
 3. make changes 
 4. `git add .`
@@ -13,3 +15,11 @@
 - `git status`
 - `git log` -> get list of commits on current branch and their history
 - `git diff` -> see what changes you made between now and the latest commit on the current branch
+- `git fetch origin` -> get changes from all other users on all branches in all remotes
+- `git checkout <branch_name>` -> switch to a branch that already exists
+
+### Terminology:
+
+- Commit: a change that you make - only visible on your local branch and nowhere else
+- Push:   you push your latest commit(s) to the remote repository
+- Merge:  You merge your branch on the remote repository into the main branch on the remote repository
