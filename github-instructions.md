@@ -6,3 +6,10 @@
 5. `git commit -m "meaningful commit message"`
 6. `git push -u origin pranav_example_branch` -> push your new branch to the upstream
 7. create a pull request from the github UI
+
+### Miscallaneous Git commands that are good to have:
+
+- View all git branches: `git branch -va`
+- `git status`
+- `git log` -> get list of commits on current branch and their history
+- `git diff` -> see what changes you made between now and the latest commit on the current branch
