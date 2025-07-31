@@ -41,3 +41,24 @@ def get_research_agent():
    agent = create_tool_calling_agent(llm, tools, prompt)
    agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
    return agent_executor
+
+def get_research_agent():
+    """
+    Initializes and returns the LangChain agent for research.
+    """
+    if "GEMINI_API_KEY" not in os.environ:
+        raise ValueError("GEMINI_API_KEY environment variable not set.")
+
+    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0) # Use the appropriate Gemini model name
+
+    tools = [arxiv_search]
+    prompt = ChatPromptTemplate.from_messages(
+        [
+            ("system", "You are a helpful research assistant. You have access to a tool for searching academic papers."),
+            ("human", "{input}"),
+            ("placeholder", "{agent_scratchpad}"),
+        ]
+    )
+    agent = create_tool_calling_agent(llm, tools, prompt)
+    agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+    return agent_executor

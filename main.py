@@ -2,6 +2,10 @@
 # from agents.pdf_agent import pdf_agent
 # from agents.summarizer_agent import summarizer_agent
 # from agents.synthesizer_agent import synthesizer_agent
+# from agents.search_agent import search_agent
+# from agents.pdf_agent import pdf_agent
+# from agents.summarizer_agent import summarizer_agent
+# from agents.synthesizer_agent import synthesizer_agent
 
 
 # def main():
