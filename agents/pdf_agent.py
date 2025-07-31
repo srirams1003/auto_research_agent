@@ -1,4 +1,15 @@
 from utils.pdf_utils import download_pdf, extract_chunks
+from langchain.document_loaders import PyPDFLoader
+from langchain.chains import RetrivevalQA
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.vectorstores import FAISS
+from langchain.embeddings import GoogleGenerativeAIEmbeddings
+
+llm = ChatGoogleGenerativeAI(model_name="gemini-1.5-flash", temperature=0)
+embeddings = GoogleGenerativeAIEmbeddings()
+
+
+
 
 def pdf_agent(paper):
     pdf_url = paper.pdf_url
