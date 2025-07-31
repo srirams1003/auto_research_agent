@@ -5,3 +5,5 @@ google-generativeai
 langchain
 PyMuPDF
 tiktoken 
+langchain-google-genai
+python-dotenv
