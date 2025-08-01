@@ -6,3 +6,5 @@ langchain
 PyMuPDF
 tiktoken
 langchain-google-genai
+faiss-cpu
+langchain-community
