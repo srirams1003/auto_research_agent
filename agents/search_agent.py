@@ -21,14 +21,18 @@ def arxiv_search(query: str, max_results: int = 5) -> list:
 
 def get_research_agent():
    """
-   Initializes and returns the LangChain agent for research.
-   """
-   if "GEMINI_API_KEY" not in os.environ:
-       raise ValueError("GEMINI_API_KEY environment variable not set.")
+    Initializes and returns the LangChain agent for research.
+    """
+   google_api_key = os.getenv("GEMINI_API_KEY")
 
+   if not google_api_key:
+        raise ValueError("GEMINI_API_KEY environment variable not set.")
 
-   llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0) # Use the appropriate Gemini model name
-
+   llm = ChatGoogleGenerativeAI(
+        model="gemini-1.5-flash",
+        temperature=0,
+        google_api_key=google_api_key
+    )
 
    tools = [arxiv_search]
    prompt = ChatPromptTemplate.from_messages(
