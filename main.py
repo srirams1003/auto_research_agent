@@ -51,14 +51,20 @@ if __name__ == "__main__":
        exit(1)
 
    # Example usage
-   print("\n🤖 Research Agent is ready!")
-   print("=" * 50)
-   print("Available actions:")
-   print("• Search for academic papers: 'Find papers about machine learning'")
-   print("• Analyze specific papers: 'Analyze the paper at [PDF_URL]'")
-   print("• Research topics: 'Research quantum computing applications'")
+   print("\n🤖 Auto Research Agent is ready!")
+   print("=" * 60)
+   print("This agent will:")
+   print("1. 🔍 Search for relevant academic papers")
+   print("2. 📄 Download and analyze PDF content")
+   print("3. 📝 Summarize key findings from each paper")
+   print("4. 🧠 Synthesize all findings into a comprehensive summary")
+   print("=" * 60)
+   print("Example queries:")
+   print("• 'Research machine learning applications in healthcare'")
+   print("• 'Find papers about quantum computing and summarize key findings'")
+   print("• 'Analyze recent developments in renewable energy research'")
    print("• Type 'exit' or 'quit' to stop")
-   print("=" * 50)
+   print("=" * 60)
 
    while True:
        try:
@@ -71,10 +77,20 @@ if __name__ == "__main__":
                print("Please enter a valid query.")
                continue
            
-           print("\n🔄 Processing your request...")
+           print("\n🔄 Processing your research request...")
+           print("This may take a few minutes as the agent:")
+           print("• Searches for relevant papers")
+           print("• Downloads and analyzes PDFs")
+           print("• Summarizes key findings")
+           print("• Synthesizes comprehensive results")
+           print("\n⏳ Please wait...")
+           
            response = agent_executor.invoke({"input": user_input})
-           print("\n📝 Response:")
+           print("\n" + "="*60)
+           print("📊 RESEARCH RESULTS")
+           print("="*60)
            print(response["output"])
+           print("="*60)
            
        except KeyboardInterrupt:
            print("\n👋 Goodbye!")

@@ -6,6 +6,8 @@ from langchain_core.prompts import ChatPromptTemplate
 import os
 from utils.arxiv_utils import search_papers
 from agents.pdf_agent import process_pdf
+from agents.summarizer_agent import summarize_text_chunks
+from agents.synthesizer_agent import synthesize_summaries
 
 
 @tool
@@ -35,21 +37,29 @@ def get_research_agent():
         google_api_key=google_api_key
     )
 
-   tools = [arxiv_search, process_pdf]
+   tools = [arxiv_search, process_pdf, summarize_text_chunks, synthesize_summaries]
    prompt = ChatPromptTemplate.from_messages(
        [
-           ("system", """You are a helpful research assistant with access to academic paper search and PDF analysis tools.
+           ("system", """You are a comprehensive research assistant with access to academic paper search, PDF analysis, summarization, and synthesis tools.
 
 Available tools:
 1. arxiv_search: Search for academic papers on arXiv
 2. process_pdf: Download and analyze PDF content to answer questions
+3. summarize_text_chunks: Summarize text chunks from papers
+4. synthesize_summaries: Combine multiple summaries into a cohesive final summary
 
-Workflow:
+Research Workflow:
 1. Use arxiv_search to find relevant papers for the user's query
-2. For each relevant paper, use process_pdf to analyze its content and answer specific questions
-3. Provide comprehensive research insights based on the papers found
+2. For each relevant paper, use process_pdf to extract and analyze content
+3. Use summarize_text_chunks to create concise summaries of key sections
+4. Use synthesize_summaries to combine all summaries into a comprehensive research overview
 
-Always explain what you're doing and provide clear, well-structured responses."""),
+When the user asks for research on a topic:
+- First search for relevant papers
+- Then analyze and summarize each paper's key findings
+- Finally, synthesize all findings into a comprehensive research summary
+
+Always explain your process and provide well-structured, academic-quality responses."""),
            ("human", "{input}"),
            ("placeholder", "{agent_scratchpad}"),
        ]
