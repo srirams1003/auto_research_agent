@@ -10,6 +10,7 @@ from agents.summarizer_agent import summarize_text_chunks
 from agents.synthesizer_agent import synthesize_summaries
 
 
+#The search agent is used to search for academic papers on arXiv.
 @tool
 def arxiv_search(query: str, max_results: int = 5) -> list:
    """
@@ -28,15 +29,18 @@ def get_research_agent():
     """
    google_api_key = os.getenv("GEMINI_API_KEY")
 
+    #If google API key is not found then raise error
    if not google_api_key:
         raise ValueError("GEMINI_API_KEY environment variable not set.")
 
+    #Initialize the Gemini model
    llm = ChatGoogleGenerativeAI(
         model="gemini-1.5-flash",
         temperature=0,
         google_api_key=google_api_key
     )
 
+   #Define the tools that the agent will use
    tools = [arxiv_search, process_pdf, summarize_text_chunks, synthesize_summaries]
    prompt = ChatPromptTemplate.from_messages(
        [
