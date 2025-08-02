@@ -2,11 +2,14 @@ from langchain.tools import tool
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 
-
-#summarizes text chunks using the Gemini LLM
 @tool
 def summarize_text_chunks(text_chunks: str) -> str:
+    """
+    Summarizes text chunks using the Gemini LLM.
     
+    Args:
+        text_chunks: The text chunks to summarize (can be multiple chunks separated by newlines)
+    """
     try:
         # Get API key
         google_api_key = os.getenv("GEMINI_API_KEY")

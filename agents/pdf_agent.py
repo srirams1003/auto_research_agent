@@ -8,10 +8,15 @@ import os
 import tempfile
 import requests
 
-#downloads a PDF from URL, processes it, and answers questions about it
 @tool
 def process_pdf(pdf_url: str, query: str) -> str:
+    """
+    Downloads a PDF from URL, processes it, and answers questions about it.
     
+    Args:
+        pdf_url: The URL of the PDF to download and process
+        query: The question to ask about the PDF content
+    """
     try:
         # Download PDF to temporary file
         response = requests.get(pdf_url)

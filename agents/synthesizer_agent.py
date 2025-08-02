@@ -2,11 +2,14 @@ from langchain.tools import tool
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 
-
-#combines multiple summaries into a cohesive, unified final summary
 @tool
 def synthesize_summaries(summaries: str) -> str:
-
+    """
+    Combines multiple summaries into a cohesive, unified final summary.
+    
+    Args:
+        summaries: Multiple summaries separated by newlines to be combined
+    """
     try:
         # Get API key
         google_api_key = os.getenv("GEMINI_API_KEY")
