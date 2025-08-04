@@ -8,3 +8,5 @@ tiktoken
 langchain-google-genai
 faiss-cpu
 langchain-community
+fastapi
+uvicorn
