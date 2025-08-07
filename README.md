@@ -42,7 +42,7 @@ A lightweight agentic AI tool to search, summarize, and synthesize research pape
 
     [ 🔑 ] Get your Gemini API key from: https://makersuite.google.com/app/apikey
 
-3. If you want to serve this as a backend server to communicate with the frontend UI, run this:
+3. If you want to serve this as a backend server to communicate with the frontend UI, clone the frontend from https://github.com/srirams1003/auto_research_agent_frontend, and then run this:
    ```bash
     uvicorn server:app --reload
    ```
