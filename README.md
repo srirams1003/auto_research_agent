@@ -44,7 +44,7 @@ A lightweight agentic AI tool to search, summarize, and synthesize research pape
 
 3. Run the main program:
    ```bash
-   python main.py
+    uvicorn server:app --reload
    ```
 
 ## Project Structure
