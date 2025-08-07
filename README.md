@@ -42,9 +42,13 @@ A lightweight agentic AI tool to search, summarize, and synthesize research pape
 
     [ 🔑 ] Get your Gemini API key from: https://makersuite.google.com/app/apikey
 
-3. Run the main program:
+3. If you want to serve this as a backend server to communicate with the frontend UI, run this:
    ```bash
     uvicorn server:app --reload
+   ```
+   If you want to use this as a standalone CLI tool, run this:
+   ```bash
+   python main.py
    ```
 
 ## Project Structure
